@@ -1,0 +1,7 @@
+*.pyc
+/settings.py
+
+/venv
+*-info
+__pycache__
+/libs

@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tariff &mdash; Dokumentace pro multishop alpha</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Rejstřík"
+              href="genindex.html"/>
+        <link rel="search" title="Vyhledávání" href="search.html"/>
+    <link rel="top" title="Dokumentace pro multishop alpha" href="index.html"/>
+        <link rel="next" title="Checkout" href="checkout.html"/>
+        <link rel="prev" title="Core" href="core.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> multishop
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tariff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkout.html">Checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Jak testovat</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">multishop</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Tariff</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="_sources/tariff.rst.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-multishop.tariff">
+<span id="tariff"></span><h1>Tariff<a class="headerlink" href="#module-multishop.tariff" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>Účtuje využívání služeb. Poplatků je vícero. Platby se přidávají se
+vzrůstajícími možnostmi platformy.</p>
+<p>Primární zaměření platformy je na drobné podnikatele bez eshopů a na
+začínající podnikatele &#8220;startupy&#8221;, kterým tak poskytujeme promo-místo kde jsou i
+ostatní startupy.</p>
+<div class="section" id="logika-zpoplatneni">
+<h2>Logika zpoplatnění<a class="headerlink" href="#logika-zpoplatneni" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Forma vydělávání peněz je</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Měsíční předplatné</strong> za provozování obchodu pro všechny - jak ty, kteří
+mají obchod jenom zde, tak importované eshopy. U obou nám to pomáhá předejít
+situaci, kdy obchody probíhají za našimi zády. U importovaných eshopů to hrozí
+o hodně víc. Na předplatné se vztahují kupóny.</li>
+<li><strong>Procenta z prodaného zboží</strong> je fixní sazba pro všechny. Na tento poplatek
+se nevztahují kupóny.
+Poplatek se automaticky započítá u jakéhokoliv zboží, které se dostane v
+objednávce přes status <code class="xref py py-attr docutils literal"><span class="pre">multishop.core.Order.CONFIRMED</span></code>. Procenta z ceny
+se předpokládá, že jsou započítané v ceně - <em>naše platforma cenu nenavyšuje</em>!</li>
+</ul>
+</div></blockquote>
+<div class="section" id="rizika">
+<h3>Rizika<a class="headerlink" href="#rizika" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<p><strong>Obchody nám budou prodávat za zády.</strong> Tohle částečně řeší mesíční poplatek za
+vedení obchodu. V případě již existujích eshopů tomu nemáme šanci zabránit.
+Dlouhodobá strategie by byla donutit je opustit jejich eshop a být primárně u nás.
+Na to musíme poskytovat dostatek funkcí (např. export na jiné zbožíové katalogy).
+V případě lidí, kteří mají primárně obchod u nás, se bude jednat o zanedbatelné
+procento zákazníků, kteří budou kupovat za zády. Hlavně se bude jednat o obchody
+s velmi drahým zbožím. Zase se jedná o objemné zboží, které by nás spíš trápilo
+při přepravě.</p>
+<div class="section" id="doprava">
+<h4>Doprava<a class="headerlink" href="#doprava" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Pro nás je ideální, pokud si člověk objedná pouze z jednoho obchodu. Pak dopravu
+zajistí prodejce a my jsme z obliga.
+V případě objednávky z vícero obchodů, se poštovné v plné výši přesune na nás a
+my zajistíme svoz zboží. Cena poštovného zůstane jako předtím - maximální
+poštovné ze všech výrobků.</p>
+<p>Je nutné dobře rozmyslet procentuální zpoplatnění prodeje, abychom vykryli
+ztrátu způsobenou svozem výrobků z více obchodů k jednomu zákazníkovi.</p>
+</div>
+<div class="section" id="slevy-a-promo-kody">
+<h4>Slevy a promo-kódy<a class="headerlink" href="#slevy-a-promo-kody" title="Trvalý odkaz na tento nadpis">¶</a></h4>
+<p>Promo kódy si může přidat pouze obchod, který má aktivní nějaké nabídky.</p>
+<p>Aby naše služba ožila, tak by default je kupon (musí se jim poslt emailem) pro
+prvních 50 lidí co přidají produkt do svého obchodu dostanou zdarma 3 měsíce
+provozu.</p>
+<p>Tarify se přiřazují při každé změně v nabídkách obchodu. Každý tarif má maximální
+cenu a kvantitu. Tyto aggregace ukazují na MAXIMÁLNÍ počet a proto se tarif mění
+ve chvíli kdy této hranice není dosaženo (je exkluzivní).</p>
+</div>
+</div>
+</div>
+<div class="section" id="module-multishop.tariff.models">
+<span id="modely"></span><h2>Modely<a class="headerlink" href="#module-multishop.tariff.models" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<dl class="class">
+<dt id="multishop.tariff.models.Tariff">
+<em class="property">class </em><code class="descclassname">multishop.tariff.models.</code><code class="descname">Tariff</code><a class="headerlink" href="#multishop.tariff.models.Tariff" title="Trvalý odkaz na tuto definici">¶</a></dt>
+<dd><p>Reprezentuje možné tarify v rámci obchodu. Má atribut <code class="xref py py-attr docutils literal"><span class="pre">threshold</span></code> který
+reprezentuje hranici pro volbu tohoto tarifu. Aktuálně je to číslo, které určuje
+maximální počet <code class="xref py py-class docutils literal"><span class="pre">multishop.core.models.Offer</span></code> na obchod.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multishop.tariff.models.Billing">
+<em class="property">class </em><code class="descclassname">multishop.tariff.models.</code><code class="descname">Billing</code><a class="headerlink" href="#multishop.tariff.models.Billing" title="Trvalý odkaz na tuto definici">¶</a></dt>
+<dd><p>Manager vyúčtování obchodu, které ví jak často vyúčtovávat a jak. Jeho metoda
+<code class="xref py py-attr docutils literal"><span class="pre">bill</span></code> je vyvolána cronem, pokud nastane čas vyúčtování (atribut <code class="xref py py-attr docutils literal"><span class="pre">next_billing</span></code>)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multishop.tariff.models.Bill">
+<em class="property">class </em><code class="descclassname">multishop.tariff.models.</code><code class="descname">Bill</code><a class="headerlink" href="#multishop.tariff.models.Bill" title="Trvalý odkaz na tuto definici">¶</a></dt>
+<dd><p>Je reálný doklad, který je nutné uhradit ze strany obchodu. Každý <a class="reference internal" href="#multishop.tariff.models.Bill" title="multishop.tariff.models.Bill"><code class="xref py py-class docutils literal"><span class="pre">Bill</span></code></a> má své</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multishop.tariff.models.Statistics">
+<em class="property">class </em><code class="descclassname">multishop.tariff.models.</code><code class="descname">Statistics</code><a class="headerlink" href="#multishop.tariff.models.Statistics" title="Trvalý odkaz na tuto definici">¶</a></dt>
+<dd><p>Se vytvoří při každé změně <code class="xref py py-class docutils literal"><span class="pre">multishop.core.models.Offer</span></code> aby
+zachycoval historii vývoje obchodu.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="checkout.html" class="btn btn-neutral float-right" title="Checkout" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core.html" class="btn btn-neutral" title="Core" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Tomas Peterka.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'alpha',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

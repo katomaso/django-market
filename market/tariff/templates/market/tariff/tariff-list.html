@@ -1,0 +1,28 @@
+{% extends "neutral.html" %}
+{% load core_tags %}
+
+{% block head-title%}{% trans "Pricing" %}{%endblock%}
+
+{% block backlinks %}
+    <li> <a href="{{ request.get_full_url }}">{% trans "Pricing" %}</a> </li>
+{% endblock backlinks %}
+
+{% block content %}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>{% trans "Tariff" %}</th>
+                <th>{% trans "Monthly" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ object.name }} {{ object.description }}</td>
+                    <td>{{ object.monthly }} {% trans "$" %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

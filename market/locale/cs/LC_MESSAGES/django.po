@@ -1,0 +1,1217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: multishop 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-25 11:57+0100\n"
+"PO-Revision-Date: 2017-01-19 09:24+0100\n"
+"Last-Translator: Tomáš Peterka <peterka@webriginals.com>\n"
+"Language-Team: Tomas Peterka <peterka@webriginals.com>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: checkout/cart_modifiers.py:17 core/migrations/0001_initial.py:177
+#: core/models.py:239
+msgid "Tax"
+msgstr "Daň"
+
+#: checkout/forms.py:13
+msgid "Form of payment"
+msgstr "Způsob platby"
+
+#: checkout/migrations/0001_initial.py:19
+#: checkout/migrations/0001_initial.py:39 core/migrations/0001_initial.py:26
+#: core/migrations/0001_initial.py:57 core/migrations/0001_initial.py:77
+#: core/migrations/0001_initial.py:86 core/migrations/0001_initial.py:114
+#: core/migrations/0001_initial.py:126 core/migrations/0001_initial.py:143
+#: core/migrations/0001_initial.py:163 core/migrations/0001_initial.py:188
+#: payment/migrations/0001_initial.py:19 tariff/migrations/0001_initial.py:35
+#: tariff/migrations/0001_initial.py:47 tariff/migrations/0001_initial.py:66
+#: tariff/migrations/0001_initial.py:76 teaser/migrations/0001_initial.py:19
+msgid "ID"
+msgstr "ID"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Status"
+msgstr "Status"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Processing"
+msgstr "Zpracovávám"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Confirming"
+msgstr "Potvrzuji"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Confirmed"
+msgstr "Potvrzeno"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Paid"
+msgstr "Zaplaceno"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Shipped"
+msgstr "Odesláno"
+
+#: checkout/migrations/0001_initial.py:21
+msgid "Canceled"
+msgstr "Zrušeno"
+
+#: checkout/migrations/0001_initial.py:22
+msgid "Order subtotal"
+msgstr "Předběžná cena"
+
+#: checkout/migrations/0001_initial.py:23
+msgid "Order Total"
+msgstr "Konečná cena"
+
+#: checkout/migrations/0001_initial.py:24
+msgid "Shipping address"
+msgstr "Dodací adresa"
+
+#: checkout/migrations/0001_initial.py:25
+msgid "Billing address"
+msgstr "Fakturační adresa"
+
+#: checkout/migrations/0001_initial.py:26
+msgid "Created"
+msgstr "Vytvořeno"
+
+#: checkout/migrations/0001_initial.py:27
+msgid "Updated"
+msgstr "Aktualizáno"
+
+#: checkout/migrations/0001_initial.py:28
+msgid "Cart primary key"
+msgstr "Identifikátor košíku"
+
+#: checkout/migrations/0003_order_user.py:20 core/migrations/0001_initial.py:49
+#: core/models.py:90
+msgid "User"
+msgstr "Uživatel"
+
+#: checkout/migrations/0004_checkout_shop.py:27
+#: checkout/migrations/0004_checkout_shop.py:32
+#: checkout/migrations/0004_checkout_shop.py:37
+#: checkout/migrations/0004_checkout_shop.py:42 checkout/models.py:136
+#: checkout/models.py:137
+msgid "Order"
+msgstr "Objednávka"
+
+#: checkout/models.py:136 tariff/models.py:276
+msgid "from"
+msgstr "od"
+
+#: checkout/models.py:259 core/migrations/0002_foreign_keys.py:102
+#: core/models.py:598
+msgid "Shipping"
+msgstr "Doprava"
+
+#: checkout/views.py:66
+msgid "There is no order for this user"
+msgstr "Žádná objednávka pro tohoto uživatele"
+
+#: checkout/views.py:273
+msgid "Your password was set."
+msgstr "Resetovali jsme vaše heslo"
+
+#: checkout/views.py:299
+msgid "Your order was canceled"
+msgstr "Objednávka byla zrušena"
+
+#: checkout/views.py:329
+msgid "Invalid request or permissions"
+msgstr "Neplatný požadavek nebo oprávnění"
+
+#: checkout/views.py:347
+msgid "No such order"
+msgstr "Zvolená objednávka neexistuje"
+
+#: checkout/views.py:412
+msgid "Order marked as "
+msgstr "Objednávka označena jako "
+
+#: checkout/views.py:434
+msgid "Cannot lower order's status."
+msgstr "Nelze vrátit obejdnávku."
+
+#: checkout/views.py:436
+msgid "Seller cannot cancel an order."
+msgstr "Prodejce nemůže zrušit objednávku."
+
+#: core/adapters.py:66
+msgid "Your email is already taken"
+msgstr "Tento email je bohužel zabraný"
+
+#: core/forms.py:76
+msgid "Email already registered."
+msgstr "Email už je zaregistrovaný"
+
+#: core/forms.py:77
+msgid "Incorrect email and password combination"
+msgstr "Špatné přihlašovací údaje"
+
+#: core/forms.py:82
+msgid "Password"
+msgstr "Heslo"
+
+#: core/forms.py:119 core/forms.py:122 core/migrations/0001_initial.py:31
+#: core/models.py:55
+msgid "Full name"
+msgstr "Vaše celé jméno"
+
+#: core/forms.py:153
+msgid "I have a physical shop."
+msgstr "Mám výdejní místo/kamenný obchod"
+
+#: core/forms.py:189 core/forms.py:286 core/migrations/0001_initial.py:144
+#: core/migrations/0001_initial.py:166 core/models.py:217
+msgid "Name"
+msgstr "Název"
+
+#: core/forms.py:190 core/migrations/0001_initial.py:65 core/models.py:614
+msgid "Business number"
+msgstr "IČ"
+
+#: core/forms.py:191 core/migrations/0001_initial.py:66 core/models.py:615
+#: crafts/models.py:18
+msgid "Tax ID"
+msgstr "DIČ"
+
+#: core/forms.py:192
+msgid "Zip code"
+msgstr "PSČ"
+
+#: core/forms.py:203 core/forms.py:287 core/migrations/0001_initial.py:106
+#: core/migrations/0001_initial.py:207 core/migrations/0002_foreign_keys.py:37
+#: core/models.py:228 core/models.py:423 core/models.py:460
+msgid "Category"
+msgstr "Kategorie"
+
+#: core/forms.py:205
+msgid "Shipping options"
+msgstr "Možnosti dopravy"
+
+#: core/forms.py:211
+msgid "Bank account"
+msgstr "Bankovní účet"
+
+#: core/forms.py:214
+msgid "Bank account number should be PREFIX - NUMBER / BANK"
+msgstr "Bankovní účet uvěďte jako PREFIX - ČÍSLO / BANKA"
+
+#: core/forms.py:235
+msgid "You have to choose at least one shipping option"
+msgstr "Musíte vybrat způsob dodání"
+
+#: core/forms.py:285
+msgid "select your product if we already know it"
+msgstr "pokud máme produkt v databázi, vyberte jej"
+
+#: core/forms.py:289 core/migrations/0002_foreign_keys.py:42 core/models.py:226
+msgid "Manufacturer"
+msgstr "Výrobce"
+
+#: core/forms.py:294
+msgid "select the manufacturer if we already know them"
+msgstr "pokud již výrobce známe, vyberte jej"
+
+#: core/forms.py:332
+msgid "Field is required"
+msgstr "Pole je povinné"
+
+#: core/migrations/0001_initial.py:27
+msgid "password"
+msgstr "Heslo"
+
+#: core/migrations/0001_initial.py:28
+msgid "last login"
+msgstr "Poslední přihlášení"
+
+#: core/migrations/0001_initial.py:29
+msgid "superuser status"
+msgstr "Naduživatel"
+
+#: core/migrations/0001_initial.py:29
+msgid ""
+"Designates that this user has all permissions without explicitly assigning "
+"them."
+msgstr ""
+"Označuje, že tento uživatel má všechna oprávnění bez explicitního přiřazení."
+
+#: core/migrations/0001_initial.py:32 core/models.py:56
+msgid "Email"
+msgstr "Email"
+
+#: core/migrations/0001_initial.py:34 core/models.py:58
+msgid "Phone number"
+msgstr "Telefon"
+
+#: core/migrations/0001_initial.py:34 core/migrations/0001_initial.py:132
+#: utils/models.py:116
+msgid "Enter a valid phone number."
+msgstr "Telefonní číslo není validní"
+
+#: core/migrations/0001_initial.py:35 core/models.py:61
+msgid "Karma"
+msgstr "Karma"
+
+#: core/migrations/0001_initial.py:36 core/migrations/0001_initial.py:134
+#: core/migrations/0001_initial.py:172 core/migrations/0001_initial.py:195
+#: core/models.py:63 core/models.py:229 core/models.py:463 core/models.py:703
+msgid "Photo"
+msgstr "Ukázková fotka"
+
+#: core/migrations/0001_initial.py:37 core/models.py:67
+msgid "staff status"
+msgstr "uživatelská role"
+
+#: core/migrations/0001_initial.py:37 core/models.py:68
+msgid "Designates whether the user can log into this admin site."
+msgstr "Určuje, zda-li se uživatel může přhlásit do správy webu"
+
+#: core/migrations/0001_initial.py:38 core/models.py:70
+msgid "active"
+msgstr "aktivní"
+
+#: core/migrations/0001_initial.py:38 core/models.py:71
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Určuje, zda-li je uživatel aktivní. Odškrtnutím této volby zakážete tento "
+"účet, ale nesmažete ho."
+
+#: core/migrations/0001_initial.py:39 core/models.py:74
+msgid "date joined"
+msgstr "Založeno"
+
+#: core/migrations/0001_initial.py:42
+msgid "groups"
+msgstr "skupiny"
+
+#: core/migrations/0001_initial.py:42
+msgid ""
+"The groups this user belongs to. A user will get all permissions granted to "
+"each of their groups."
+msgstr "Uživatel náleží k těmto skupinám a tím má vyplývající práva."
+
+#: core/migrations/0001_initial.py:43
+msgid "user permissions"
+msgstr "Práva"
+
+#: core/migrations/0001_initial.py:43
+msgid "Specific permissions for this user."
+msgstr "Zvláštní oprávnění pro tohoto uživatele."
+
+#: core/migrations/0001_initial.py:51 core/models.py:91
+msgid "Users"
+msgstr "Uživatelé"
+
+#: core/migrations/0001_initial.py:58 core/models.py:602
+msgid "Name/Company"
+msgstr "Jméno/Firma"
+
+#: core/migrations/0001_initial.py:59 core/models.py:603
+msgid "Street"
+msgstr "Ulice"
+
+#: core/migrations/0001_initial.py:60 core/models.py:604
+msgid "City"
+msgstr "Obec"
+
+#: core/migrations/0001_initial.py:61 core/models.py:605
+msgid "Post Code"
+msgstr "PSČ"
+
+#: core/migrations/0001_initial.py:62 core/models.py:606
+msgid "State"
+msgstr "Kraj"
+
+#: core/migrations/0001_initial.py:63 core/models.py:610
+msgid "Position lng"
+msgstr "zeměpisná výška"
+
+#: core/migrations/0001_initial.py:64 core/models.py:612
+msgid "Position lat"
+msgstr "zeměpisná šířka"
+
+#: core/migrations/0001_initial.py:67 core/models.py:617
+msgid "Further description"
+msgstr "Upřesnění"
+
+#: core/migrations/0001_initial.py:67 core/models.py:618
+msgid "Will appear on an invoice."
+msgstr "Objeví se na faktuře."
+
+#: core/migrations/0001_initial.py:70 core/models.py:622
+msgid "Address"
+msgstr "Adresa"
+
+#: core/migrations/0001_initial.py:71 core/models.py:623
+msgid "Addresses"
+msgstr "Adresy"
+
+#: core/migrations/0001_initial.py:78 core/models.py:665
+msgid "Prefix"
+msgstr "Předčíslí"
+
+#: core/migrations/0001_initial.py:79 core/models.py:667
+msgid "Account number"
+msgstr "Číslo účtu"
+
+#: core/migrations/0001_initial.py:80 core/models.py:669
+msgid "Bank code"
+msgstr "Kód banky"
+
+#: core/migrations/0001_initial.py:102
+msgid "Generated automatically, don't edit"
+msgstr "Automaticky generovaný, neupravovat"
+
+#: core/migrations/0001_initial.py:107 core/models.py:424
+msgid "Categories"
+msgstr "Kategorie"
+
+#: core/migrations/0001_initial.py:119 core/migrations/0002_foreign_keys.py:92
+#: core/models.py:583 core/models.py:607
+msgid "Country"
+msgstr "Okres"
+
+#: core/migrations/0001_initial.py:120 core/models.py:584
+msgid "Countries"
+msgstr "Okresy"
+
+#: core/migrations/0001_initial.py:127 core/migrations/0001_initial.py:164
+#: core/migrations/0001_initial.py:189
+msgid "rating"
+msgstr "hodnocení"
+
+#: core/migrations/0001_initial.py:128 core/migrations/0001_initial.py:165
+#: core/migrations/0001_initial.py:190
+msgid "votes"
+msgstr "hlasy"
+
+#: core/migrations/0001_initial.py:131 core/models.py:694
+msgid "Customer support"
+msgstr "Zákaznická podpora"
+
+#: core/migrations/0001_initial.py:133 core/models.py:701
+msgid "Short description of the company"
+msgstr "Krátký popis společnosti"
+
+#: core/migrations/0001_initial.py:134 core/migrations/0001_initial.py:195
+#: core/models.py:466 core/models.py:706
+msgid "Preferable a square of size 300x300 pixels"
+msgstr "Ideálně čtvercový tvar o velikosti 300x300 px"
+
+#: core/migrations/0001_initial.py:145 core/migrations/0001_initial.py:167
+#: core/models.py:218
+msgid "Slug"
+msgstr "Doménové jméno"
+
+#: core/migrations/0001_initial.py:146 core/migrations/0001_initial.py:168
+#: core/models.py:219
+msgid "Active"
+msgstr "Aktivní"
+
+#: core/migrations/0001_initial.py:147 core/migrations/0001_initial.py:171
+#: core/models.py:220 core/models.py:334
+msgid "Removed"
+msgstr "Odstraněno"
+
+#: core/migrations/0001_initial.py:148 core/migrations/0001_initial.py:169
+#: core/migrations/0004_core_invoice.py:38 core/models.py:221
+msgid "Date added"
+msgstr "Datum přidání"
+
+#: core/migrations/0001_initial.py:149 core/migrations/0001_initial.py:170
+#: core/migrations/0004_core_invoice.py:43 core/models.py:222
+msgid "Last modified"
+msgstr "Poslední změna"
+
+#: core/migrations/0001_initial.py:150 core/migrations/0001_initial.py:176
+#: core/models.py:237
+msgid "Unit price"
+msgstr "Cena bez DPH"
+
+#: core/migrations/0001_initial.py:151 core/models.py:327
+msgid "Quantity"
+msgstr "Množství"
+
+#: core/migrations/0001_initial.py:151 core/models.py:328
+msgid "-1 means infinity"
+msgstr "-1 znamená nekonečně"
+
+#: core/migrations/0001_initial.py:153 core/models.py:331
+msgid "Comment your offer"
+msgstr "Poznámka k vaší ceně"
+
+#: core/migrations/0001_initial.py:154 core/models.py:333
+msgid "Shipping price"
+msgstr "Cena dopravy"
+
+#: core/migrations/0001_initial.py:173 core/models.py:232
+msgid "Description of product"
+msgstr "Popis produktu"
+
+#: core/migrations/0001_initial.py:174 core/models.py:233
+msgid "Structured information"
+msgstr "Strukturované informace"
+
+#: core/migrations/0001_initial.py:174 core/models.py:234
+msgid "One information per line. Use colons. (e.g. wight: 20kg)"
+msgstr "Jednu informaci na řádek, používejte dvojtečky (např. váha: 20kg)"
+
+#: core/migrations/0001_initial.py:175 core/models.py:235
+msgid "Days to expedition"
+msgstr "Dní na přípravu"
+
+#: core/migrations/0001_initial.py:176 core/models.py:238
+msgid "The best price from all offers. Don't edit manually."
+msgstr "Nejlepší cena napříč obchody. Neupravovat ručně."
+
+#: core/migrations/0001_initial.py:177 core/models.py:240
+msgid "Tax in % (e.g. 21)."
+msgstr "Daň v % (např. 21)."
+
+#: core/migrations/0001_initial.py:191 core/models.py:457
+msgid "Shop name"
+msgstr "Jméno obchodu"
+
+#: core/migrations/0001_initial.py:191 core/models.py:457
+msgid "No need to be official or unique."
+msgstr "Nemusí být oficiální ani unikátní."
+
+#: core/migrations/0001_initial.py:192 core/models.py:458
+msgid "Motto"
+msgstr "Motto"
+
+#: core/migrations/0001_initial.py:194 core/models.py:461
+msgid "Description of your shop"
+msgstr "O Vašem obchodu"
+
+#: core/migrations/0001_initial.py:196 core/models.py:468
+msgid "Background"
+msgstr "Pozadí"
+
+#: core/migrations/0001_initial.py:196 core/models.py:470
+msgid "Preferable a rectagle of size 960x720 pixels"
+msgstr "Ideálně obdélníkový tvar o velikosti 960x720 pixelů"
+
+#: core/migrations/0001_initial.py:197 core/models.py:476
+msgid "Opening hours"
+msgstr "Otvírací doba"
+
+#: core/migrations/0001_initial.py:203
+msgid "URL to XML feed of products"
+msgstr "Odkaz na XML soubor s výrobky"
+
+#: core/migrations/0001_initial.py:205 core/models.py:473
+msgid "Billing Address"
+msgstr "Fakturační adresa"
+
+#: core/migrations/0002_foreign_keys.py:27 core/models.py:474
+msgid "Placement of your shop"
+msgstr "Kde se Váš obchod nachází"
+
+#: core/migrations/0002_foreign_keys.py:67 core/models.py:697
+msgid "Headquaters"
+msgstr "Vedení společnosti"
+
+#: core/migrations/0002_foreign_keys.py:72 core/models.py:700
+msgid "Manufacturer specialization"
+msgstr "Specializace výrobce"
+
+#: core/migrations/0002_foreign_keys.py:97 core/models.py:600
+msgid "Billing"
+msgstr "Fakturační"
+
+#: core/migrations/0003_core_shop.py:38
+msgid "Product"
+msgstr "Zboží"
+
+#: core/migrations/0004_core_invoice.py:48
+msgid "Proforma"
+msgstr "Zálohová faktura"
+
+#: core/migrations/0004_core_invoice.py:48
+msgid "Invoice"
+msgstr "Faktura"
+
+#: core/models.py:451
+msgid "Unofficial shops cannot go beyond {:d} products or {!s} total price"
+msgstr ""
+"Bez živnostenského listu jste omezeni na {:d} výrobků nebo {!s} součet cen"
+
+#: core/models.py:730
+msgid " has been sold out. Please update your cart."
+msgstr " je vyprodáno. Prosím upravte svůj nákupní košík."
+
+#: core/models.py:739
+msgid " has been removed. Please remove it from your cart."
+msgstr " bylo odstaněno. Prosím odstraňte je ze svého nákupního košíku."
+
+#: core/urls/core.py:40 core/views/base.py:253
+msgid "Products"
+msgstr "Zboží"
+
+#: core/urls/core.py:42
+msgid "Sellers"
+msgstr "Prodejci"
+
+#: core/urls/core.py:44
+msgid "Manufacturers"
+msgstr "Výrobci"
+
+#: core/views/admin.py:90
+msgid "Data were updated"
+msgstr "Změny byly uloženy"
+
+#: core/views/admin.py:192
+msgid "Please correct the mistakes bellow in the form"
+msgstr "Prosím opravte chyby níže"
+
+#: core/views/admin.py:208
+msgid "Your shop has been created!"
+msgstr "Váš obchod byl vytvořen!"
+
+#: core/views/admin.py:211
+msgid "Changes were saved!"
+msgstr "Vaše změny byly uloženy."
+
+#: core/views/admin.py:234
+msgid "Your shop cooperation was ended"
+msgstr "Obchodní spolupráce byla ukončena"
+
+#: core/views/admin.py:331
+msgid "You can offer only products within {!s} category"
+msgstr "Bez živnostenského listu jste omezeni na kategorii {!s}"
+
+#: core/views/admin.py:341
+msgid "Product's photo hasn't been saved due to it's invalid format"
+msgstr ""
+"Obrázek nebyl uložen kvůli nesprávnému formátu. Používejte jpeg nebo png."
+
+#: core/views/admin.py:347
+msgid "Product was added"
+msgstr "Výrobek byl přidán"
+
+#: core/views/admin.py:364
+msgid "Old offer was updated"
+msgstr "Vaše stará nabídka byla aktualizována"
+
+#: core/views/admin.py:377
+msgid "Offer to a product was added"
+msgstr "Vaše nabídka byla přiřazena k výrobku"
+
+#: core/views/admin.py:419
+msgid "Your offer was removed"
+msgstr "Vaše nabídka byla odebrána"
+
+#: core/views/admin.py:444
+msgid "Product was hidden"
+msgstr "Výrobek přidán"
+
+#: core/views/admin.py:470
+msgid "Offer was not added. Haven't you made a mistake in the form?"
+msgstr "Chyba v nabídce."
+
+#: core/views/admin.py:481
+msgid "Your offer was added."
+msgstr "Vaše nabídka byla přidána k výrobku."
+
+#: core/views/admin.py:519
+msgid "No ID specified"
+msgstr "Chybí ID"
+
+#: core/views/admin.py:525
+msgid "You already have an offer on this product"
+msgstr "Již jste se jednou vycenil"
+
+#: core/views/admin.py:527
+msgid "No such product"
+msgstr "Zvolené zboží neexistuje"
+
+#: core/views/admin.py:529
+msgid "Specify ID"
+msgstr "Zadejte ID"
+
+#: core/views/admin.py:553
+msgid "You are already logged in."
+msgstr "Již jste přihlášen"
+
+#: core/views/admin.py:559
+msgid "You have set up an password already. Use it for login."
+msgstr "Tento účet je zaheslovaný. Přihlašte se"
+
+#: core/views/admin.py:571
+msgid "My Profile"
+msgstr "Můj Profil"
+
+#: core/views/admin.py:580
+msgid "Create shop"
+msgstr "Vytvořit obchod"
+
+#: core/views/admin.py:585
+msgid "My Shop"
+msgstr "Můj obchod"
+
+#: core/views/base.py:210
+#, python-brace-format
+msgid "Couldn't find the engine {0}"
+msgstr "Nemohu najít vyhledávač {0}"
+
+#: core/views/base.py:227
+msgid "Invalid query"
+msgstr "Špatný klíč"
+
+#: core/views/base.py:248
+msgid "No search term found"
+msgstr "Pravděpodobně jste nezadali výraz pro vyhledávání"
+
+#: core/views/base.py:280
+msgid "No product found"
+msgstr "Nic nebylo nalezeno"
+
+#: crafts/models.py:15
+msgid "Your specialization"
+msgstr "Vaše specializace"
+
+#: crafts/models.py:17
+msgid "Business ID"
+msgstr "IČ"
+
+#: payment/migrations/0001_initial.py:21 payment/models.py:10
+msgid "Cash payment"
+msgstr "Platba hotově"
+
+#: payment/migrations/0001_initial.py:21 payment/models.py:11
+msgid "Bank transfer"
+msgstr "Platba bankovním převodem"
+
+#: payment/migrations/0001_initial.py:21 payment/models.py:12
+msgid "Credit Card"
+msgstr "Platební karta"
+
+#: payment/migrations/0001_initial.py:24 payment/models.py:20
+msgid "Processor which created the payment"
+msgstr "Zdroj platby"
+
+#: tariff/forms.py:15
+msgid "This code has expired."
+msgstr "Kód je už neplatný."
+
+#: tariff/forms.py:16
+msgid "This code is used up."
+msgstr "Kód byl již využitý."
+
+#: tariff/forms.py:17
+msgid "This code does not exist."
+msgstr "Kód neexistuje."
+
+#: tariff/migrations/0001_initial.py:36 tariff/migrations/0001_initial.py:37
+msgid "monthly"
+msgstr "měsíčně"
+
+#: tariff/migrations/0001_initial.py:36 tariff/migrations/0001_initial.py:37
+msgid "quartely"
+msgstr "čtvrtletně"
+
+#: tariff/migrations/0001_initial.py:36 tariff/migrations/0001_initial.py:37
+msgid "half-yearly"
+msgstr "pololetně"
+
+#: tariff/migrations/0001_initial.py:37
+msgid "Next billing period"
+msgstr "Další vyúčtovací období"
+
+#: tariff/migrations/0001_initial.py:39
+msgid "Is set automatically"
+msgstr "Nastaven automaticky"
+
+#: tariff/migrations/0001_initial.py:49
+msgid "Discount in %"
+msgstr "Sleva v %"
+
+#: tariff/migrations/0001_initial.py:50
+msgid "Usages in months"
+msgstr "Měsíce použití"
+
+#: tariff/models.py:58
+msgid "{0.name} next billing {1:%d.%m.%Y}"
+msgstr "{0.name} další vyúčtování {1:%d.%m.%Y}"
+
+#: tariff/models.py:141
+msgid "Rounding price to zero"
+msgstr "Dorovnání ceny k nule"
+
+#: tariff/models.py:275
+msgid "Used"
+msgstr "Použito"
+
+#: tariff/models.py:277
+msgid "until"
+msgstr "do"
+
+#: tariff/models.py:326
+msgid "Discount"
+msgstr "Sleva"
+
+#: tariff/models.py:326
+msgid "for next"
+msgstr "pro další"
+
+#: tariff/models.py:326
+msgid "paid months"
+msgstr "zpoplatněné měsíce"
+
+#: tariff/models.py:338
+msgid "Has to be UPPER CASE"
+msgstr "Musí být KAPITÁLKAMI"
+
+#: tariff/models.py:353
+msgid "Shop already has this discount"
+msgstr "Tuto slevu už máte"
+
+#: tariff/views.py:19
+msgid "list"
+msgstr "seznam"
+
+#: tariff/views.py:28
+msgid "admin"
+msgstr "sprava"
+
+#: tariff/views.py:38
+msgid "You have to send some form"
+msgstr "Musíte odeslat nějaký formulář"
+
+#: tariff/views.py:49
+msgid "You got a discount: "
+msgstr "Dostal jste slevu: "
+
+#: tariff/views.py:51
+msgid "You have used this code already."
+msgstr "Tento kód jste již použil."
+
+#: tariff/views.py:63
+msgid "Settings saved"
+msgstr "Nastavení uloženo"
+
+#: teaser/forms.py:13
+msgid "your@email.com"
+msgstr "vas@email.cz"
+
+#: teaser/forms.py:24
+msgid "Your full name"
+msgstr "Vaše celé jméno"
+
+#: teaser/migrations/0001_initial.py:22 teaser/models.py:14
+msgid "Wanna become seller"
+msgstr "Chci zde prodávat"
+
+#: teaser/migrations/0001_initial.py:23 teaser/models.py:16
+msgid "Wanna stay tuned"
+msgstr "chci být v obraze"
+
+#: teaser/models.py:20
+msgid "registration for {}"
+msgstr "registrace pro {}"
+
+#: teaser/views.py:47
+msgid "Your email is not valid or is already registered"
+msgstr "Váš email není validní nebo byl už registrovaný"
+
+#: teaser/views.py:60
+msgid "This email is already taken"
+msgstr "Tento email je bohužel zabraný"
+
+#: teaser/views.py:64
+msgid "Thank you for shown interest! We won't let you down."
+msgstr "Děkujeme za projevený zájem! Nezklameme vás."
+
+#: teaser/views.py:78
+msgid "register"
+msgstr "registrovat"
+
+#: teaser/views.py:105
+msgid "Welcome! Your account was created"
+msgstr "Vítejte! Vaše registrace byla potvrzena."
+
+#: teaser/views.py:109
+msgid "You are now part of \"Early Bird\" group"
+msgstr "Byl jste přiřazen do skupiny \"první registrovaní\""
+
+#: teaser/views.py:124
+msgid "setup"
+msgstr "nastaveni"
+
+#: teaser/views.py:136
+msgid "Changes have been saved."
+msgstr "Vaše změny byly uloženy."
+
+#: templates/account/messages/logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Jste přihlášen jako %(name)s"
+
+#: templates/account/messages/logged_out.txt:2
+msgid "You have signed out."
+msgstr "Odhlášen"
+
+#: templates/account/messages/password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Heslo změněno"
+
+#: templates/account/messages/password_set.txt:2
+msgid "Password successfully set."
+msgstr "Heslo nastaveno"
+
+#: templates/account/messages/primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Email nastaven"
+
+#: templates/account/messages/unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Vaše emailová adresa musí být ověřena"
+
+#: templates/core/admin/user-edit.html:45
+msgid "Save"
+msgstr "Uložit"
+
+#: templates/stdimage/admin_widget.html:9
+msgid "Change:"
+msgstr "Změnit:"
+
+#: templates/stdimage/admin_widget.html:14
+msgid "Delete"
+msgstr "Smazat"
+
+#: utils/templates/utils/bootstrap/CheckboxSelectMultiple.html:19
+#: utils/templates/utils/bootstrap/RadioSelect.html:19
+#: utils/templates/utils/bootstrap/h_CheckboxSelectMultiple.html:19
+msgid "optional"
+msgstr "nepovinný"
+
+#: utils/widgets.py:71
+msgid "$"
+msgstr "Kč"
+
+#: utils/widgets.py:76
+msgid "$ without VAT"
+msgstr "Kč bez DPH"
+
+#~ msgid "Our only way to communicate with you"
+#~ msgstr "Jediný způsob komunikace"
+
+#~ msgid "Cannot mark as paid this order"
+#~ msgstr "Nemohu označit objednávku jako zaplacenou"
+
+#~ msgid "Order was already finished"
+#~ msgstr "Objednávka už byla odbavena."
+
+#~ msgid "Cannot finish this order"
+#~ msgstr "Nemůžete odbavit tuto objednávku"
+
+#~ msgid "Price comment"
+#~ msgstr "Poznámka k ceně"
+
+#~ msgid "For delivery"
+#~ msgstr "Doručení"
+
+#~ msgid "Suborder has to have a shop"
+#~ msgstr "Podobjednávka musí být přiřazena k obchodu."
+
+#~ msgid "Completed"
+#~ msgstr "Dokončeno"
+
+#~ msgid "Selected payment option is not valid"
+#~ msgstr "Zvolený typ platby není v pořádku"
+
+#~ msgid "Early bird discount"
+#~ msgstr "Sleva pro první zaregistrované"
+
+#~ msgid "{!s} from {:%d.%m %Y} until {:%d.%m %Y}"
+#~ msgstr "{!s} -- od {:%d.%m %Y} do {:%d.%m %Y}"
+
+#~ msgid "Don't forget negative number!"
+#~ msgstr "Nezapomeňte záporné číslo!"
+
+#~ msgid "Important dates"
+#~ msgstr "Důležitá data"
+
+#~ msgid "There is no such user"
+#~ msgstr "Uživatel neexistuje"
+
+#~ msgid "Your email is not verified. Please confirm it via email sent to you"
+#~ msgstr ""
+#~ "Váš email není potvrzen. Zaslali jsme vám email s potvrzovacím odkazem."
+
+#~ msgid ""
+#~ "How much percent will we grab from the price just because of performing "
+#~ "this operation. Interval [0,1]"
+#~ msgstr "Kolik procent bude odečteno za použití této služby. Interval [0,1]"
+
+#~ msgid "Pay On Delivery"
+#~ msgstr "Platba při předání"
+
+#~ msgid "Multiple Shipping"
+#~ msgstr "Hromadná doprava"
+
+#~ msgid "Cannot create a order from the cart"
+#~ msgstr "Nelze vytvořit objednávku. Zkontrolujte detail košíku."
+
+#~ msgid "Shipping for {0} is invalid: {1}"
+#~ msgstr "Doprava pro {0} je neplatná: {1}"
+
+#~ msgid "Billing is the same as shipping"
+#~ msgstr "Fakturační je stejná jako dodací"
+
+#~ msgid "Billing address has to be filled when marked different"
+#~ msgstr "Fakturační adresa musí být v tomto případě vyplněna"
+
+#~ msgid "Shipping address has to be filled when marked different"
+#~ msgstr "Doručovací adresa musí být v tomto případě vyplněna"
+
+#~ msgid "An address is required"
+#~ msgstr "Adresa je povinná"
+
+#~ msgid "A shop with your business id already exists"
+#~ msgstr "Jeden obchod s vaším IČ již existuje"
+
+#~ msgid "Reason for the mark"
+#~ msgstr "Důvod známky"
+
+#~ msgid "Pending"
+#~ msgstr "Čekajcí"
+
+#~ msgid "Closed"
+#~ msgstr "Uzavřený"
+
+#~ msgid "Want to be informed"
+#~ msgstr "Chci být u toho"
+
+#~ msgid "Login"
+#~ msgstr "Přihlášení"
+
+#~ msgid "Proceed to checkout"
+#~ msgstr "Přejít na odbavení"
+
+#~ msgid "Shopping cart is empty"
+#~ msgstr "Košík je prázdný"
+
+#~ msgid "Password confirmation"
+#~ msgstr "Heslo znovu"
+
+#~ msgid "A user with that email already exists."
+#~ msgstr "Uživatel s tímto emailem již existuje"
+
+#~ msgid "Passwords are not the same"
+#~ msgstr "Hesla se neshodují"
+
+#~ msgid "Name has to be in format name _space_ surname"
+#~ msgstr "Jméno musí obsahovat mezeru (použijte prosím své pravé jméno)"
+
+#~ msgid "User with this email already exists"
+#~ msgstr "Uživatel s tímto emailem již existuje"
+
+#~ msgid "Welcome! Your registration was confirmed."
+#~ msgstr "Vítejte! Vaše registrace byla potvrzena."
+
+#~ msgid "Email was sent"
+#~ msgstr "Email odeslán"
+
+#~ msgid "Extra informations"
+#~ msgstr "Strukturované informace"
+
+#~ msgid "Shops"
+#~ msgstr "Obchody"
+
+#~ msgid "Cart"
+#~ msgstr "Košík"
+
+#~ msgid "empty"
+#~ msgstr "prázdný"
+
+#~ msgid ""
+#~ "%(counter)s item\n"
+#~ "    "
+#~ msgid_plural "%(counter)s items"
+#~ msgstr[0] "%(counter)s položka"
+#~ msgstr[1] "%(counter)s položky"
+#~ msgstr[2] "%(counter)s položek"
+
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
+
+#~ msgid "Sign Out"
+#~ msgstr "Odhlásit"
+
+#~ msgid "Sign in"
+#~ msgstr "Přihlásit se"
+
+#~ msgid "Sign Up"
+#~ msgstr "Zaregistrovat se"
+
+#~ msgid "The product was deleted"
+#~ msgstr "Výrobek byl smazán"
+
+#~ msgid "Save product"
+#~ msgstr "Uložit výrobek"
+
+#~ msgid "delete?"
+#~ msgstr "smazat?"
+
+#~ msgid "Company base"
+#~ msgstr "Sídlo firmy"
+
+#~ msgid "Home"
+#~ msgstr "Domů"
+
+#~ msgid "Will be used for next billing"
+#~ msgstr "Bude použit pro další vyúčtovací periodu"
+
+#~ msgid "Sum of shipping costs"
+#~ msgstr "Celková cena přepravy"
+
+#~ msgid "Massive shipping"
+#~ msgstr "Hromadná doprava"
+
+#~ msgid "Mark addresses as the same or fill in billing address"
+#~ msgstr "Zaškrtněte adresy jako stejné nebo vyplňte fakturační adresu"
+
+#~ msgid "New order from"
+#~ msgstr "Nová objednávka od"
+
+#~ msgid "Subcategory"
+#~ msgstr "Upřesnění kategorie"
+
+#~ msgid "days"
+#~ msgstr "dny"
+
+#~ msgid "You can use markdown syntax"
+#~ msgstr "Můžete použít značkovací jazyk markdown"
+
+#~ msgid "Order from"
+#~ msgstr "Objednávka od"
+
+#~ msgid "parent"
+#~ msgstr "rodič"
+
+#~ msgid "Payment options"
+#~ msgstr "Platební možnosti"
+
+#~ msgid "Payment"
+#~ msgstr "Platba"
+
+#~ msgid "Shop where belongs"
+#~ msgstr "Obchod kam náleží"
+
+#~ msgid "Category of products"
+#~ msgstr "Kategorie výrobku"
+
+#~ msgid "Will be used if automatic parsing fails."
+#~ msgstr "Použije se pouze v případě, že selže automatické rozpoznání"
+
+#~ msgid "Identity number"
+#~ msgstr "IČ"
+
+#~ msgid "Check name"
+#~ msgstr "Zkontrolovat jméno"
+
+#~ msgid "Save changes"
+#~ msgstr "Uložit změny"
+
+#~ msgid "Save and Publish"
+#~ msgstr "Uložit a publikovat"
+
+#~ msgid "I want to go"
+#~ msgstr "Chci jít na"
+
+#~ msgid "Search products"
+#~ msgstr "Prohledat výrobky"
+
+#~ msgid "Your shopping cart"
+#~ msgstr "Váš obchodní košík"
+
+#~ msgid "Product name"
+#~ msgstr "Jméno výrobku"
+
+#~ msgid "Line Total"
+#~ msgstr "Součet řádky"
+
+#~ msgid "Cart Subtotal"
+#~ msgstr "Mezisoučet košíku"
+
+#~ msgid "Cart Total"
+#~ msgstr "Součet košíku"
+
+#~ msgid "Update Shopping Cart"
+#~ msgstr "Upravit košík"
+
+#~ msgid "Log in"
+#~ msgstr "Přihlásit"
+
+#~ msgid "Please confirm your registration"
+#~ msgstr "Prosím potvrďte Vaší registraci"
+
+#~ msgid "Shipping and billing addresses are the same"
+#~ msgstr "Dodací a fakturační adresa jsou stejné"
+
+#~ msgid "Your confirmation link is too old"
+#~ msgstr "Váš potvrzovací kód je příliš starý"
+
+#~ msgid "Hide"
+#~ msgstr "Schovat"
+
+#~ msgid "Empty Cart"
+#~ msgstr "Vyprázdnit košík"
+
+#~ msgid "Description of specialization"
+#~ msgstr "Popis specializace"
+
+#~ msgid "Is it possible to get the wares from this address?"
+#~ msgstr "Je možné vyzvedávat zboží z této adresy?"
+
+#~ msgid "Search"
+#~ msgstr "Vyhledat"
+
+#~ msgid ""
+#~ "Extra structured information (like weight,size). One information per "
+#~ "line. Use colons."
+#~ msgstr ""
+#~ "Strukturované nformace navíc (např. výška, váha...). Pište prosím jednu "
+#~ "na řádek a používejte dvojtečky (např váha: 20kg)"
+
+#~ msgid "Add product"
+#~ msgstr "Přidat výrobek"
+
+#~ msgid "Manage shop"
+#~ msgstr "Spravovat obchod"
+
+#~ msgid "Select what is address of your shop"
+#~ msgstr "Vyberte adresu vašeho obchodu"
+
+#~ msgid "New address bellow"
+#~ msgstr "Nová adresa níže"
+
+#~ msgid "Including tax"
+#~ msgstr "Včetně DPH"
+
+#~ msgid "Crafts"
+#~ msgstr "Řemesla"
+
+#~ msgid "Hello"
+#~ msgstr "Dobrý den"
+
+#~ msgid "Shipping Address"
+#~ msgstr "Dodací adresa"

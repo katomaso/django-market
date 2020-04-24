@@ -1,0 +1,53 @@
+{% extends "core/private/market.html" %}
+{% load i18n fields %}
+
+{% block head-title%}{% trans "Edit profile" %}{%endblock%}
+
+{% block media %}{{ user_form.media }}{% endblock %}
+
+{% block bottom-javascript %}
+    {{block.super}}
+    <script type="text/javascript" src="{{STATIC_URL}}js/core.admin.user-edit.js"></script>
+{% endblock bottom-javascript %}
+
+
+{% block content %}
+<div class="content-unit">
+    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+    <h1>{% trans "Edit profile" %}</h1>
+    <h2>{% trans "Other actions" %}</h2>
+    <ul>
+      <li><a href="{% url 'account_email' %}" class="btn btn-link">{% trans "Manage emails" %}</a></li>
+      <li><a href="{% url 'account_set_password' %}" class="btn btn-link">{% trans "Password setup" %}</a></li>
+    </ul>
+    <p>
+      {% csrf_token %}
+
+      {% hfield user_form.name %}
+      {# {% hfield user_form.avatar %} #}
+
+      <br>
+
+      {{ addresses.non_field_errors }}
+      {{ addresses.shipping.non_field_errors }}
+      {{ addresses.billing.non_field_errors }}
+
+
+      <div class="row">
+          <div class="col-md-6 col-xs-12" id="billing-address">
+              <h4>{% trans "Billing address" %}<span style="font-size:80%">&nbsp;&nbsp;({{address_form.addresses_the_same}}{{address_form.addresses_the_same.label}})</span></h4>
+              {% include "core/include/address_form.html" with form=address_form.billing %}
+          </div>
+          <div class="col-md-6 col-xs-12" id="shipping-address">
+              <div >
+              <h4>{% trans "Shipping address" %}</h4>
+              {% include "core/include/address_form.html" with form=address_form.shipping %}
+              </div>
+          </div>
+      </div>
+
+      <input type="submit" value="{% trans "Save" %}" class="btn btn-success btn-submit"/>
+    </p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+django-extensions
+django-debug-toolbar
+pygraphviz
+pyparsing
+pydot
+pyquery
+django-extensions
+mock
+factory_boy
+django-webtest
+django-test-plus

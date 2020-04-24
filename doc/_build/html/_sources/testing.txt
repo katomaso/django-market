@@ -1,0 +1,19 @@
+Jak testovat
+############
+
+:author: katomaso
+:date: 2016-04-17
+
+Testy jsou rozdělené do modulů podle náročnosti a pokrytí
+
+- unit
+- view
+- model
+
+Nejjednodušší je použít `make test_MODULE` např. `make test_unit` (je tam i alias na opačný zápis,
+takže `make unit_test` funguje taky).
+
+Pro rozběhnutí testu `python manage.py test tests.<module> --settings=tests.<module>.settings` kde
+`<module>` je právě jeden z "unit", "view" nebo "model". Testly lze specifikovat i přesněji, např.
+`tests.unit.test_users`.
+

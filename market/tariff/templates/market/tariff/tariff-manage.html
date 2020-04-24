@@ -1,0 +1,74 @@
+{% extends "private.html" %}
+{% load core_tags fields %}
+
+{% block head-title%}{% trans "Billing management" %}{%endblock%}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-md-6 no-left-padding">
+            <div class="content-unit">
+                <h1>{% trans "Tariffs" %}</h2>
+                <strong>{% trans "Current tariffs" %}</strong>
+                <p>
+                    {{ billing.tariff.name }}
+                </p>
+                <strong>{% trans "Current billing period" %}</strong>
+                <p>
+                    {{ billing.get_period_display }}
+                </p>
+                <form method="post" class="form">
+                    {% field form.next_period %}
+                    <p>
+                    {% if billing.last_billed == today %}
+                    {% trans "We are changing your billing period today" %}
+                    {% else %}
+                    {% trans "We will change your billing period in" %} {{billing.next_billing|timeuntil}}.
+                    {% endif %}
+                    </p><br>
+                    <input type="submit" name="tariff" class="btn btn-success btn-submit" value="{% trans "Change billing period" %}"/>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 no-right-padding">
+            {% if campaign_active %}
+            <div class="content-unit">
+                <h2>{% trans "Discount coupon?" %}</h2>
+                <form method="post" class="form">
+                    {% csrf_token %}
+                    {% hfield campaign_form.code %}
+                    <input type="submit" name="campaign" value="{% trans "Spin it!" %}" class="btn btn-success btn-submit">
+                </form>
+            </div>
+            {% endif %}
+
+            {% if discounts %}
+            <div class="content-unit">
+                <h2>{% trans "You were discounted" %}</h2>
+                <ul class="nolist">
+                {% for discount in discounts %}
+                    <li><strong>{{discount.name}}</strong><br>
+                        <span class="subline">{{discount}}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="content-unit">
+                <h2>{% trans "Invoices" %}</h2>
+                {% for bill in bills %}
+                    {% if bill.proforma.paid %}
+                        <a href="{% url 'invoice' uid=bill.invoice.uid %}"> {{ bill.invoice }} </a>
+                    {% else %}
+                        <a href="{% url 'invoice' uid=bill.proforma.uid %}"> {{ bill.proforma }} </a>
+                    {% endif %}
+                {% empty %}
+                    {% trans "No invoices yet" %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

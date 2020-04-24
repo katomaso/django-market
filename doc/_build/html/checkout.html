@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Checkout &mdash; Dokumentace pro multishop alpha</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Rejstřík"
+              href="genindex.html"/>
+        <link rel="search" title="Vyhledávání" href="search.html"/>
+    <link rel="top" title="Dokumentace pro multishop alpha" href="index.html"/>
+        <link rel="next" title="Jak testovat" href="testing.html"/>
+        <link rel="prev" title="Tariff" href="tariff.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> multishop
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tariff.html">Tariff</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Jak testovat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrations.html">Migrace</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">multishop</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Checkout</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="_sources/checkout.rst.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-multishop.checkout.models">
+<span id="checkout"></span><h1>Checkout<a class="headerlink" href="#module-multishop.checkout.models" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>Slouží ke zpracování <code class="xref py py-class docutils literal"><span class="pre">Cart</span></code> a jeho úspěšné přetvoření
+do objednávky <code class="xref py py-class docutils literal"><span class="pre">Order</span></code> a poté ke správě jejich stavu.</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">Cart</span></code> serializuje do DB pouze odkazy na nabídky a uživatele, jinak
+ceny a modifikátory (slevy, daně) se počítá <strong>za běhu</strong> v metodě
+<code class="docutils literal"><span class="pre">Cart.update</span></code>, která vyvolá modifikátory ve třech fázích pomocí signálů</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">pre_process_cart</span></code></li>
+<li><code class="docutils literal"><span class="pre">post_process_cart</span></code></li>
+<li><code class="docutils literal"><span class="pre">process_cart_item</span></code></li>
+</ul>
+</div></blockquote>
+<p>Handler signálu dostane instanci <code class="xref py py-class docutils literal"><span class="pre">Cart</span></code> (resp. <code class="xref py py-class docutils literal"><span class="pre">CartItem</span></code>) a očekává
+se, že budou využívat pouze metody <code class="docutils literal"><span class="pre">Cart.add_modifier</span></code>, která přidává
+tuple (label, price) do seznamu <code class="docutils literal"><span class="pre">extra_price_fields</span></code> a modifikuje <code class="docutils literal"><span class="pre">total</span></code>.</p>
+<div class="section" id="process-objednani">
+<h2>Process objednání<a class="headerlink" href="#process-objednani" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Objednat zboží lze i bez přihlášení - pak je celý objednávkový process řízený
+emailem a bez hesel.</p>
+<p>Uživatel naplní košík a pak klikne na &#8220;Objednat&#8221;.</p>
+<blockquote>
+<div><p>1. <strong>Kontakt</strong>
+Zobrazí se formulář pro fakturační, a pokud existuje tak i dodací, adresu.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Přihlášený</strong> uživatel má tyto informace předvyplněné.</li>
+<li><strong>Npřihlášený</strong> uživatel má navíc pole <em>email</em>, které se nekontroluje,
+zda-li už je v databázi</li>
+</ul>
+</div></blockquote>
+<p>2. <strong>Doprava</strong>
+Způsob dopravy si každý obchod určuje zvlášť, jakou formu předání zboží poskytuje.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Osobní odběr</strong> je cajk, pro nás žádná práce</li>
+<li><strong>Dopravu zajistí prodejce</strong> znamená, že ze všech produktů od jednoho
+prodejce vybereme zakoupený výrobek s nejdražším poštovným. Za tuto cenu
+posílá prodejce všechny své výrobky dohromady.</li>
+</ul>
+</div></blockquote>
+<p>3. <strong>Platba</strong>
+Platba určuje jak se potvrdí objednávka.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Platba při dodání</strong> je pro nás nejistá a proto požadujeme následné potvrzení
+objednávky. Odešleme email s odkazem na potvrzení objednávy.</li>
+<li><strong>Platba kartou</strong> je pro nás nejjistější. Po zaplacení ihned označíme objednávku
+jako zaplacenou.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="uzivatel-neni-prihlaseny">
+<h3>Uživatel není přihlášený<a class="headerlink" href="#uzivatel-neni-prihlaseny" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Zobrazí se mu formulář s komunikačním emailem, fakturační a volitelně dodací adresou</li>
+<li>Vybere si způsob dopravy</li>
+<li>Zaplatí</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="logika-objednavek">
+<h2>Logika objednávek<a class="headerlink" href="#logika-objednavek" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Nad-objednávka neobsahuje žádné zboží ale má pouze pod-objednávky a referenci na
+uživatele. Toto má čistě technický důvod, aby byla pouze jedna objednávka pro
+jednoho uživatele v časovém rozmezí několika sekund. Pod-objednávky jsou
+vytvořeny jedna pro každý obchod, ze kterého bylo nakoupené zboží v hlavní
+objednávce. pod-objednávky nikdy nemá referenci na uživatele.</p>
+<p>Nad-objednávka nikdy nemá přiřazený obchod. Způsob a směr platby rozhodne až
+payment processor. Ten by měl řešit problém hromadných plateb. Proforma je tedy
+vystavena na obchod v nad-objednávky, <em>ale faktury jsou vystaveny na jednotlivé
+obchody z pod-objednávky</em>. nad-objednávky drží hodnotu, která je rovna součtu
+hodnot všech pod-objednávky.</p>
+<p>Nad-objednávka je jako jediná dostupná dostupná přes
+<code class="docutils literal"><span class="pre">shop.order.get_order_from_request</span></code>, protože jako jediná má přiřazeného
+uživatele.</p>
+<div class="section" id="stavy-objednavek">
+<h3>Stavy objednávek<a class="headerlink" href="#stavy-objednavek" title="Trvalý odkaz na tento nadpis">¶</a></h3>
+<img src="_images/graphviz-24e3a44b12e7f7ffebf276b1f58d4d452526ebd6.png" alt="digraph OrderFlow {
+  CART [style=&quot;rounded&quot;]
+  PROCESSING
+  CONFIRMING
+  CONFIRMED
+  PAID
+  SHIPPED
+  RECEIVED
+  CANCELED
+
+  CART -&gt; PROCESSING [label=&quot;vyplněna adresa&quot;]
+  PROCESSING -&gt; CONFIRMING [label=&quot;vybraný způsob dodání&quot;]
+  CONFIRMING -&gt; CONFIRMED [label=&quot;odsouhlasena konečná cena&quot;]
+  CONFIRMED -&gt; PAID [label=&quot;platba doručena na účet&quot;]
+  PAID -&gt; RECEIVED [style=&quot;dashed&quot;, label=&quot;&quot;]
+}" />
+<p>Na začátek výtah ze zdrojového kódu:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># New order, addresses and shipping/payment methods chosen (user is in the shipping backend)</span>
+<span class="n">CONFIRMING</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># The order is pending confirmation (user is on the confirm view)</span>
+<span class="n">CONFIRMED</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># The order was confirmed (user is in the payment backend)</span>
+<span class="n">PAID</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># (COMPLETED) Payment backend successfully completed</span>
+<span class="n">SHIPPED</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># The order was shipped to client</span>
+<span class="n">CANCELED</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># The order was canceled</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>PROCESSING</dt>
+<dd>Stav do kterého je objednávka vytvořena. K vytvoření objednávky dojde při
+kliknutí na &#8220;Proceed to checkout&#8221; z náhledu nákupního košíku. V tomto stavu se
+musí nacházet nad-objednávky i pod-objednávky vždy současně.</dd>
+<dt>CONFIRMING</dt>
+<dd>V tomto stavu má objednávka přiřazený způsob dopravy
+(<code class="xref py py-class docutils literal"><span class="pre">ShippingOption</span></code>) a vygenerované příslušející
+<code class="xref py py-class docutils literal"><span class="pre">ExtraOrderPriceField</span></code> které reprezentuje cenu dopravy.
+V tomto stavu se musí nacházet nad-objednávky i pod-objednávky vždy současně.</dd>
+<dt>UNCONFIRMED</dt>
+<dd>Jsou objednávky, které byly vystaveny anonymním uživatelem. Byl tu nápad, že
+pošleme uživateli email pro potvrzení objednávky a pokud na něj klikne, tak
+nejen že přepneme objednávku na CONFIRMED, ale také mu potvrdíme email a
+nabídneme volbu hesla.</dd>
+<dt>CONFIRMED</dt>
+<dd>V tomto stavu má objednávka zvolenou metodu zaplacení a s ní všechny
+ostatní náležitosti (fakturační a doručovací adresu). Ať už uživatel zvolí
+platit zakázky zvlášť nebo dohromady <a class="footnote-reference" href="#id2" id="id1">[1]</a> stav nad-objednávky i pod-objednávky
+musí být vždy konzistentní = stejný. Payment handler nakonec vygeneruje
+proformy pro správé objednávky a ty se rozešlou zákazníkům (tzn. pouze
+objednávky s proformou se posílají emailem). Spolu s proformou odesíláme také
+fakturu každému obchodu z CONFIRMED pod-objednávky, aby si ji mohli
+předvytisknout.</dd>
+<dt>COMPLETED (PAID)</dt>
+<dd>Tento stav značí, že objednávka byla zaplacena <strong>v celé výši</strong>. V
+případě <em>platby při dodaní</em> tento stav musí manuálně přepnout obchodík při
+obdržení platby. Při jakémkoliv jiném způsobu platby, tento stav nastavuje
+přímo platební procesor. <strong>Pod</strong>-objednávky ve stavu PAID zpřístupní faktury i
+zákazníkovi. Zákazník nikdy nedostane fakturu pro nad-objednávky,
+protože by se pak záruka vztahovala na vydavatele faktury.</dd>
+<dt>SHIPPED</dt>
+<dd>Nastane jen v případě, že zboží odesílá prodejce. Je to způsob jak dát vědět
+zákazníkovi, že jeho zboží je na cestě.</dd>
+<dt>RECEIVED</dt>
+<dd>Objednávka je dokončena = zákazník drží zboží v rukou.</dd>
+<dt>CANCELLED</dt>
+<dd>Rušit objednávku může jen zákazník. (Ve všech stavech &lt; COMPLETED (PAID))</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>hromadna platba jde přes účet poskytovatele a poté je rozdělena mezi skutečné prodejce zboží. Výhodou pro zákazníka je jeden platební příkaz.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="testing.html" class="btn btn-neutral float-right" title="Jak testovat" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tariff.html" class="btn btn-neutral" title="Tariff" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Tomas Peterka.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'alpha',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

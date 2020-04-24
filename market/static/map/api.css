@@ -1,0 +1,319 @@
+@media print {
+	.noprint	{ visibility:hidden !important; } 
+}
+@media projection, screen {
+	.print		{ visibility:hidden !important; } 
+}
+.smap {
+	font-family: arial, sans-serif;
+}
+
+.smap .copyright, .smap .scale {
+	font-size: 10px;
+	cursor: default;
+	color: #333;
+	text-shadow: #fff 0 0 2px;
+}
+.smap .scale {
+	text-align: right;
+}
+
+.smap .compass {
+	width: 73px;
+	height: 73px;
+	cursor: pointer;
+}
+.smap .compass-north { 
+	background-image: url(/static/map//img/api/compass/compass-n.png)
+	_background-image: url(/static/map//img/api/compass/compass-n.gif)
+}
+.smap .compass-east { 
+	background-image: url(/static/map//img/api/compass/compass-e.png)
+	_background-image: url(/static/map//img/api/compass/compass-e.gif)
+}
+.smap .compass-south { 
+	background-image: url(/static/map//img/api/compass/compass-s.png)
+	_background-image: url(/static/map//img/api/compass/compass-s.gif)
+}
+.smap .compass-west { 
+	background-image: url(/static/map//img/api/compass/compass-w.png)
+	_background-image: url(/static/map//img/api/compass/compass-w.gif)
+}
+
+.smap .cw, .smap .ccw {
+	width: 22px;
+	height: 26px;
+	cursor: pointer;
+}
+.smap .ccw {
+	background-image: url(/static/map//img/api/ccw.png)
+}
+.smap .cw {
+	background-image: url(/static/map//img/api/cw.png)
+}
+
+.smap .cw-smooth {
+	width: 69px;
+	height: 102px;
+	background-image: url(/static/map//img/api/cw-smooth.png)
+	cursor: pointer;
+}
+.smap .cw-smooth:hover {
+	background-image: url(/static/map//img/api/cw-smooth-hover.png)
+}
+
+.smap .zoom {
+	width: 87px;
+	cursor:pointer;
+}
+
+.smap .zoom .plus {
+	width: 34px;
+	height: 36px;
+	left: 10px;
+	top: 5px;
+	background-image: url(/static/map//img/api/zoom/plus.png)
+	_background-image: url(/static/map//img/api/zoom/plus.gif)
+}
+.smap .zoom .minus {
+	width: 34px;
+	height: 36px;
+	left: 44px;
+	top: 5px;
+	background-image: url(/static/map//img/api/zoom/minus.png)
+	_background-image: url(/static/map//img/api/zoom/minus.gif)
+}
+.smap .zoom .line {
+	width: 16px;
+	right: 15px;
+	top: 52px;
+}
+.smap .zoom .label {
+	right: 18px;
+	font-size: 10px;
+	color: #666;
+	text-align: right;
+}
+.smap .zoom .slider {
+	width: 16px;
+	height: 16px;
+	right: 0px;
+	background-image: url(/static/map//img/api/zoom/slider.png)
+	_background-image: url(/static/map//img/api/zoom/slider.gif)
+}
+.smap .zoom .top {
+	height: 56px;
+	background:transparent url(/static/map//img/api/zoom/top.png)
+	_background:transparent url(/static/map//img/api/zoom/top.gif)
+}
+.smap .zoom .middle {
+	background:transparent url(/static/map//img/api/zoom/middle.png)
+	_background:transparent url(/static/map//img/api/zoom/middle.gif)
+}
+.smap .zoom .bottom {
+	height: 26px;
+	background:transparent url(/static/map//img/api/zoom/bottom.png)
+	_background:transparent url(/static/map//img/api/zoom/bottom.gif)
+}
+.smap .zoom .bird {
+	display: none;
+	position: absolute;
+	background-image: url(/static/map//img/api/zoom/bird.png)
+	background-position: 5px 0px;
+	background-repeat: no-repeat;
+	height: 81px;
+}
+.smap .zoom.oblique .bird {
+	display: block;
+}
+
+.smap .selection {
+	cursor: pointer;
+	border-color: #00a;
+	border-style: solid;
+	background-color: #66f;
+	opacity: 0.25;
+	filter: alpha(opacity=25);
+}
+
+.smap .notification {
+	width: 200px;
+	visibility: hidden;
+}
+.smap .notification div {
+	border-color: red;
+	border-width: 2px;
+	width: 15%;
+	height: 15%;
+	visibility: visible;
+}
+
+.smap .notification .top-left {
+	border-top-style: solid;
+	border-left-style: solid;
+}
+.smap .notification .top-right {
+	border-top-style: solid;
+	border-right-style: solid;
+}
+.smap .notification .bottom-left {
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+.smap .notification .bottom-right {
+	border-bottom-style: solid;
+	border-right-style: solid;
+}
+
+/*- prepinac mapovych podkladu - "SMap.Control.Layer" -*/
+.smap .layer-switch {
+	width: 120px;
+	height: 33px;
+	font-size: 13px;
+	background: transparent url(/static/map//img/api/layer-switch/button.png)
+	cursor: pointer;
+}
+.smap .layer-switch .label {
+	display: block;
+	position: absolute;
+	top: 9px;
+	left: 16px; 
+	font-family: arial, sans-serif;
+}
+.smap .layer-switch .window-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;	
+}
+.smap .layer-switch .window-content {
+	background-color: white;
+	position:relative;
+	font-size:12px;
+}
+.smap .layer-switch .left, .smap .layer-switch .right {
+	position: absolute;
+	cursor: pointer;
+	background-color: white;
+	width: 12px;
+	height: 65px;
+	top: 0px;
+}
+.smap .layer-switch .port {
+	margin: 0px 12px;
+}
+.smap .layer-switch .left {
+	left: 0px;
+}
+.smap .layer-switch .right {
+	right: 0px;
+}
+.smap .layer-switch .left .arrow {
+	background: transparent url(/static/map//img/api/layer-switch/prev.gif)
+}
+.smap .layer-switch .right .arrow {
+	background: transparent url(/static/map//img/api/layer-switch/next.gif)
+}
+.smap .layer-switch .item {
+	float: left;
+	margin: 0 0px
+}
+.smap .layer-switch .item div {
+	margin: 7px 0 0 0;
+	padding: 2px;
+	background: transparent url(/static/map//img/api/layer-switch/uncheck-border.png)
+}
+.smap .layer-switch .item p {
+	margin: -3px 0px 0px 5px;
+	color: #00c;
+}
+.smap .layer-switch .active p {
+	font-weight:bold;
+	color: #000;
+}
+.smap .layer-switch .active div {
+	background: transparent url(/static/map//img/api/layer-switch/outer-glow.png)
+}
+.smap .layer-switch .arrow {
+	width: 9px;
+	height: 13px;
+	position: absolute;
+	left: 2px;
+	top: 27px;
+}
+
+.smap .minimap {
+	border-style: solid;
+	border-width: 2px;
+}
+
+.context-menu .window-content {
+	margin: 0px -10px;
+	background-color: #fff;
+}
+.context-menu .item {
+	font-size: 93%;
+	display: block;
+	padding: 0.3em 2em 0.3em 1.25em;
+	color: black;
+	background-color: #fff;
+}
+.context-menu a.item {
+	text-decoration: none;
+	color: #00c;
+	background-color: #fff;
+}
+.context-menu a.item:hover {
+	color: white;
+	background-color: #00c;
+}
+.context-menu .disabled, .context-menu a.disabled, .context-menu a.disabled:hover {
+	color: #888;
+	background-color: #fff;
+}
+.context-menu .separator {
+	border-top: 1px dotted #c8c8c8;
+	margin: 0em 2em 0em 1.24em;
+	height: 1px;
+	padding: 0px;
+}
+
+/*- ovladaci prvek ruzice -*/
+.smap .control-rosette			{ 
+	width:44px; 
+	height:44px; 
+	overflow:hidden; 
+	position:absolute; 
+}
+
+.smap .control-rosette div		{ 
+	position:absolute;
+	top:14px; 
+	left:18px;
+	width:10px; 
+	height:10px; 
+	color:#fff;
+	font-size:14px;
+	line-height:14px;
+}
+
+/*- shluk -*/
+.smap .cluster {
+	width: 0;
+	height: 0;
+	cursor: pointer;
+}
+
+.smap .cluster div {
+	position: absolute;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 10px solid rgba(0, 0, 0, 0.4);
+	background-clip: padding-box;
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.smap .cluster img {
+	margin-left: 3px;
+}

@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Migrace &mdash; Dokumentace pro multishop alpha</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Rejstřík"
+              href="genindex.html"/>
+        <link rel="search" title="Vyhledávání" href="search.html"/>
+    <link rel="top" title="Dokumentace pro multishop alpha" href="index.html"/>
+        <link rel="prev" title="Jak testovat" href="testing.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> multishop
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tariff.html">Tariff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkout.html">Checkout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Jak testovat</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Migrace</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">multishop</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Migrace</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="_sources/migrations.rst.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-multishop.migrations"></span><div class="section" id="module-multishop.migrations">
+<span id="migrace"></span><h1>Migrace<a class="headerlink" href="#module-multishop.migrations" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>Migrace jsou tady docela komplikované. Ač jsou všechny v jednom projektu,
+tak se odkazují na všechny modelu všech podprojektů. Modely mají pokaždé
+definované <code class="docutils literal"><span class="pre">app_label=&quot;multishop&quot;</span></code>.</p>
+<div class="section" id="flatpages">
+<h2>Flatpages<a class="headerlink" href="#flatpages" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Flatpages jsou modul djanga pro jednoduchý &#8220;blogging&#8221;. To znamená, že prostě
+renderuje stránky z databáze/templates uživateli tak jak jsou.</p>
+<p>Pro jednodušší vývoj máme flatpages ve <code class="docutils literal"><span class="pre">templates/flatpages/&lt;jazyk&gt;</span></code> a teď
+pozor! Jejich název se použije jako URL, první řádka-komentář jako nadpis,
+nepovinně je zde tag <code class="docutils literal"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">&quot;slozka/sablona.html&quot;</span> <span class="pre">%}</span></code> na druhé řádce,
+a zbytek je tělo textu. Pokud šablona nespecifikuje <code class="docutils literal"><span class="pre">extedns</span></code> použije se
+defaultní <code class="docutils literal"><span class="pre">flatpages/default.html</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="testing.html" class="btn btn-neutral" title="Jak testovat" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Tomas Peterka.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'alpha',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

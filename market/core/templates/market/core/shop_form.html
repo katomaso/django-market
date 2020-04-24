@@ -1,0 +1,23 @@
+{% extends "core/private/market.html" %}
+
+{% block head-title%}{% trans "Closing down" %}{%endblock%}
+
+{% block content %}
+    <div class="content-unit">
+        <h2>{% trans "Close" %} {{shop.name}}</h2>
+        <p class="lead">
+            {% blocktrans %}
+            All your price offers will be deleted and you will loose access to
+            the maagement interface. If there are unfinished orders you will
+            have to settle them down via email or something.
+            {% endblocktrans %}
+        </p>
+        <br>
+        <p>
+            <form method="post">
+                {% csrf_token %}
+                {% trans "I am sure I want to" %} &nbsp;&nbsp;<input type="submit" name="delete" value="{% trans "close my shop" %}" class="btn btn-large btn-danger"/>
+            </form>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% spaceless %}
+{% if not inline %}
+<fieldset class="form-group field-{{ field.name }}{% if field_class %} {{field_class}}{%endif%}{% if field.errors %} error has-error{% endif %}{% if field.field.required %} required{% else %} optional{% endif %}">
+{% endif %}
+
+{% block content %}
+	{% spaceless %}
+	{% block label %}
+		{% if show_label %}
+			<label for="{{ field.id_for_label }}" class="control-label{% if label_class %} {{label_class}}{%endif%}{% if label_size %} col-md-{{label_size}} col-xs-{{label_size_small}}{%endif%}">{{ field.label }}</label>
+		{% endif %}
+	{% endblock label %}
+	{% if col_size %}<div class="col-md-{{col_size}} col-xs-{{col_size_small}} {{col_class}}">{%endif%}
+		{% block field %}
+			{{ field }}
+			{{ append }}
+		{% endblock field %}
+	{% block info %}
+		{% if field.errors and show_error %}
+			<span class="error-inline">
+				{% for error in field.errors %}{{ error }}{% endfor %}
+			</span>
+		{% endif %}
+		{% if show_info %}
+			{% if not field.field.required and not field.errors %}
+				<span class="help-inline optional">(nepovinné)</span>
+			{% endif %}
+			{% if field.help_text %}
+				<span class="help-inline">{{ field.help_text|safe }}</span>
+			{% endif %}
+		{% endif %}
+	{% endblock info %}
+	{% if col_size %}</div>{%endif%}
+	{% endspaceless %}
+{% endblock content %}
+
+{% if not inline %}
+</fieldset>
+{% endif %}
+
+{% endspaceless %}

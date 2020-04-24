@@ -1,0 +1,93 @@
+.smap .card {
+	cursor: default;
+}
+.smap .card .close {
+	position: absolute;
+	cursor: pointer;
+	top: 0px;
+	right: 0px;
+	width: 35px;
+	height: 35px;
+	background-image: url(/static/map//img/api/card/close.png)
+	_background-image: url(/static/map//img/api/card/close.gif)
+}
+
+.smap .card .tail {
+	position: absolute;
+	left: 69px;
+	bottom: -41px;
+	width: 36px;
+	height: 56px;
+	background-image: url(/static/map//img/api/card/tail.png)
+	_background-image: url(/static/map//img/api/card/tail.gif)
+}
+
+.smap .card .card-body {
+	overflow: auto;
+}
+
+.smap .card .title img {
+	float: left;
+	margin: 0px 8px 8px 0px;
+	border: 1px solid gray;
+}
+
+.smap .card .title {
+	margin-right: 40px; 
+}
+
+.smap .card .title h2 {
+	font-size: 138.5%;
+}
+.smap .card .title .address {
+	color: gray;
+	line-height: 130%;
+}
+
+.smap .card .card-content	{
+	font-size: 13px;
+}
+
+.smap .card .content-description {
+	line-height: 140%; 
+	margin-top: 7px;
+}
+
+.smap .card .content-categoryname p {
+	color:#666666;
+}
+
+.smap .card .gps a {
+	color:#6666CC;
+}
+.smap .card .gps img {
+	position:relative;
+	top:1px;
+	margin-left:6px;
+	cursor:pointer;
+}
+
+.smap .card .content-expediture {
+	line-height:135%; 
+}
+
+.smap .card .content-gallery table		{ 
+	padding:0; 
+}
+
+.smap .card .content-gallery table td 	{ 
+	border-collapse:separate; 
+	padding:0; 
+	line-height:0px; 
+	font-size:0px;
+	border-spacing:0 1px; 
+	vertical-align:middle; 
+	text-align:center; 
+	border:1px solid #8888E4;
+}
+
+.smap .card .content-gallery table img	{ 
+	display:inline-block; 
+	margin:0; 
+	padding:0; 
+}
